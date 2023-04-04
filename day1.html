@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 自定义属性 */
+        :root {
+            --main-bg-color: pink;
+        }
+
+        body {
+            background-color: var(--main-bg-color);
+        }
+        div {
+            border: 5px solid;
+        }
+        .item {
+            width: 100px;
+            height: 100px;
+        }
+        .item1 {
+            background-color: var(--not-set, #000);
+        }
+        .item2 {
+            background-color: var(--not-set, var(--also-not-set, #00f));
+        }
+        .item3 {
+              background-color: #F00;
+              /* 3.1 - 无效值被忽略 */
+              background-color: blahaha;
+        }
+        .item4 {
+              /* 3.2 - 第二个声明是不存在的自定义属性 此时不会被忽略 使用继承值*/
+              background-color: #F00;
+              background-color: var(--not-set);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- custom properties and fallbacks -->
+
+    <!-- 1. 没有自定义属性回退值生效 -->
+    <div class="item item1"></div>
+    <!-- 2. 回退值也可以是自定义属性 -->
+    <div class="item item2"></div>
+    <!-- 3. 关于值的忽略 -->
+        <!-- 3.1 忽略 -->
+    <div class="item item3"></div>
+        <!-- 3.2 不忽略 继承了body -->
+    <div class="item item4"></div>
+</body>
+
+</html>
