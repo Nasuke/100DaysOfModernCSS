@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            margin: 20px 40px 10px 100px;
+        }
+        .btn {
+            margin-inline: 100px 40px;
+            margin-block: 20px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 默认情况下的margin 不会考虑reading direction -->
+    <button>Physical margin</button>
+    <button dir="rtl">Physical margin rtl</button>
+    <div>--------</div>
+    <!-- 
+        逻辑属性 margin-inline margin-block接收1-2个value
+        并且会考虑direction
+        margin-inline: 5rem;        -> (start - end 默认情况)左右都是5rem
+        margin-block: 5rem;         -> (start - end 默认情况)上下都是5rem
+        margin-inline: 1rem 2rem;   -> (start - end 默认情况)左1右2
+        margin-block: 3rem 4rem;    -> (start - end 默认情况)上3下4
+    -->
+    <button class="btn">Logical margin</button>
+    <!-- 现在start变成right了 -->
+    <button class="btn" dir="rtl">Logical margin rtl</button>
+</body>
+
+</html>

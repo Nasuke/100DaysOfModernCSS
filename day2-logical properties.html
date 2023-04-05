@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            display: flex;
+            list-style: none;
+            padding: 0.5rem 0;
+        }
+
+        li {
+            background-color: #6befef;
+            margin-right: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        全局属性dir - 指示元素中文本方向的枚举属性
+        其值为逻辑属性 ltr -> 从左到右 rtl -> 从右到左 auto -> 检查具有强方向性的字符并运用        
+    -->
+    <h3>left to right</h3>
+    <ul>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+    </ul>
+
+    <h3>right to left</h3>
+    <ul dir="rtl">
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+    </ul>
+</body>
+
+</html>
