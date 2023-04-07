@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent {
+            width: 12rem;
+            height: 12rem;
+            position: relative;
+        }
+        .child {
+            position: absolute;
+            inset-inline: auto 20px;
+            inset-block: auto 20px;
+            /* inset: auto 20px 20px auto; */
+            width: 50%;
+            height: 50%;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        1. 如同margin一样它是简写属性 代替定位时四个方向的写法
+        2. 同样它会忽略reading direction
+        3. 可以使用inset-inline inset-block逻辑属性来代替
+    -->
+
+    <div class="parent" dir="rtl">
+        <div class="child">
+            At bottom right with 20px offset
+        </div>
+    </div>
+</body>
+</html>

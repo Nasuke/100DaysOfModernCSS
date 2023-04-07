@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /* 
+                相当于   {width: 100%; max-width: 800px;}
+            
+             */
+            width: min(100%, 800px);
+            background-color: aqua;
+        }
+        .max {
+            width: (300px, 50vw);
+            background-color: #fac;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- \
+        min/max()
+        1. 接收以逗号分隔的一系列值 并取最小/最大的value width: min(400px, 200px, 300px);
+        2. 但静态的意义不大 正确用法应该是配合相对单位 min(100%, 800px) => <800px时会自适应
+    -->
+    <div>learn min</div>
+    <div class="max">learn max</div>
+</body>
+
+</html>
