@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Now */
+        input:where([type="text"],
+            [type="email"],
+            [type="url"],
+            [type="tel"],
+            [type="password"],
+            [type="search"]) {
+            border: 2px solid;
+        }
+
+        a:is(:link, :visited) {
+            color: #000;
+        }
+
+
+
+
+        /* button.button1 {
+            background-color: green;
+        } */
+
+        button:where(.button1) {
+            background-color: rebeccapurple;
+        }
+
+
+
+        button:is(.button2) {
+            background-color: rebeccapurple;
+        }
+
+        button.button2 {
+            background-color: green;
+        }
+
+        button {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        1. :where() :is()两种伪类用于以更紧凑的形式写选择器
+        2. 
+            两者区别 :where()不会增加权重 button:where(.button1) => button
+            button:is(.button) => button.button 
+    -->
+    <button>button</button>
+    <button class="button1">btn1</button>
+    <button class="button2">btn2</button>
+
+</body>
+
+</html>
