@@ -44,7 +44,17 @@
         div:has(p strong){
             border: 2px solid gray;
         }
+
+        /* 这两个权重一样 */
+        div.child {
+            background-color: #caf;
+        }
+        div:has(.hh) {
+            background-color: green;
+        }
+
     </style>
+
 </head>
 
 <body>
@@ -66,6 +76,8 @@
             <strong>I have a red and blue border in supporting browsers.</strong>
         </p>
     </div>
+    <!-- 3.权重 -->
+    <div class="child"><p class="hh">halle</p></div>
 </body>
 
 </html>

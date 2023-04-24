@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        dialog {
+            border: 1px solid aqua;
+        }
+        :modal {
+            border-style: dashed;
+            border-color: red;
+            padding: 4rem;
+        }
+    </style>
+</head>
+
+<body>
+    <dialog>
+        233
+        <button class="btn">close</button>
+    </dialog>
+    <button class="show">show</button>
+    <button class="showModal">showModal</button>
+
+    <script>
+        // 1. modal伪类用于控制showModal样式
+        // 2. showModal打开时会带背景 此时不能与其它元素交互
+        const dialog = document.querySelector('dialog')
+        const show = document.querySelector('.show')
+        const showModal = document.querySelector('.showModal')
+
+        show.onclick = () => {
+            dialog.show()
+        }
+        showModal.onclick = () => {
+            dialog.showModal()
+        }
+
+        const btn = document.querySelector('.btn')
+        btn.onclick = () => {
+            dialog.close()
+        }
+    </script>
+</body>
+
+</html>

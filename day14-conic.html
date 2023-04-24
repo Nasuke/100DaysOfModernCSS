@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 10rem;
+            height: 10rem;
+            border-radius: 50%;
+        }
+
+        .uno {
+            background-image: conic-gradient(aqua, fuchsia, salmon, aqua);
+        }
+
+        /* 改变初始角度 */
+        .tre {
+            background-image: conic-gradient(from 90deg, aqua, fuchsia);
+        }
+
+        /* 中心点偏移 */
+        .quattro {
+            background-image: conic-gradient(from 90deg at 4rem 4rem, aqua, fuchsia);
+        }
+
+        .cinque {
+            background-image: conic-gradient(from 90deg at 25% 75%, aqua, fuchsia);
+        }
+
+        .sei {
+            background-image: conic-gradient(from 90deg at center left, aqua, fuchsia);
+        }
+
+        /* 设置渐变角度 */
+        .otto {
+            background-image: conic-gradient(aqua 0deg, fuchsia 80deg, salmon 130deg, aqua 360deg);
+        }
+
+        .nove {
+            background-image: conic-gradient(aqua 0deg 50deg, fuchsia 80deg 100deg, salmon 130deg 140deg, aqua 360deg)
+        }
+        /* 同一个角度有2种或以上颜色的话 会有一条线 */
+        .dieci {
+            background-image: conic-gradient(aqua 0deg 120deg, fuchsia 120deg 240deg, salmon 240deg 360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 围绕中心点旋转渐变的颜色过度 -->
+    <div class="uno"></div>
+    <div class="tre"></div>
+    <div class="quattro"></div>
+    <div class="cinque"></div>
+    <div class="sei"></div>
+    <div class="sette"></div>
+    <div class="otto"></div>
+    <div class="nove"></div>
+    <div class="dieci"></div>
+</body>
+
+</html>

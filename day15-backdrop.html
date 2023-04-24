@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        dialog {
+            width: min(30rem, 100%);
+            aspect-ratio: 16 / 9;
+        }
+        ::backdrop {
+            background-color: rgb(0 0 155 / 0.5);
+            outline: 20px solid white;
+            outline-offset: -20px;
+        }
+        .dialog2::backdrop {
+            background: conic-gradient(red, orange, yellow, green, red);
+            outline: 20px solid white;
+            outline-offset: -40px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Dialog demo</h1>
+    <dialog class="dialog1">
+        yo!
+        <button class="close1">close</button>
+    </dialog>
+    <button class="showModal1">show modal</button>
+
+    <dialog class="dialog2">
+        yo!
+        <button class="close2">close</button>
+    </dialog>
+
+    <button class="showModal2">show other modal</button>
+
+    <script>
+        const showBtn = document.querySelector('.showModal1')
+        const dialog = document.querySelector('.dialog1')
+        const showBtn1 = document.querySelector('.showModal2')
+        const dialog1 = document.querySelector('.dialog2')
+
+        showBtn.addEventListener('click', e => {
+            dialog.show()
+        })
+        showBtn1.addEventListener('click', e => {
+            dialog1.show()
+        })
+    </script>
+</body>
+
+</html>
