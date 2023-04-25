@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent {
+            background-image: url("https://assets.codepen.io/144736/neue-donau+%281%29.webp");
+        }
+
+        .blur {
+            backdrop-filter: blur(5px);
+        }
+
+        .invert {
+            backdrop-filter: invert(1);
+        }
+
+        .hue {
+            backdrop-filter: hue-rotate(260deg);
+        }
+
+        .grayscale {
+            backdrop-filter: grayscale(100%);
+        }
+
+        .parent {
+            max-width: 50rem;
+            aspect-ratio: 500 / 330;
+            height: 100%;
+            background-size: cover;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 1rem;
+            padding: 1rem;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            margin-bottom: 3rem;
+        }
+
+        .inner {
+            padding: 1rem;
+            font-size: 2rem;
+            text-shadow: 1px 1px 3px #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        父元素有一张背景图片 子元素可以决定他们下面的是怎么展示的用backdrop-filter
+        与filters不同的是 它不会影响文字 
+    -->
+    <div class="parent">
+        <div class="inner blur">Blur</div>
+        <div class="inner invert">Invert</div>
+        <div class="inner hue">Hue</div>
+        <div class="inner grayscale">Grayscale</div>
+    </div>
+</body>
+
+</html>
