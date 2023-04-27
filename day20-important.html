@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .example {
+            /* 1. 自定义属性后面有!important的话 会被解析器移除该关键字 所以后面的属性就会覆写 */
+            --color: red !important;
+
+            color: var(--color);
+            color: blue;
+        }
+
+        .example1 {
+            /* 2. 一样优先级的话会像普通属性那样后面覆盖前面 */
+            --color: red;
+            --color: blue;
+            color: var(--color);
+        }
+
+        .example2 {
+            /* 3. 都是自定义属性的话 可以用!important来改变权重 */
+            --color: red !important;
+            --color: blue;
+
+            color: var(--color);
+        }
+
+        .example3 {
+            /* 4. 最后还是blue 参考note1 */
+            --color: red !important;
+            --color: blue;
+
+            color: var(--color);
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="example">
+        show color
+    </div>
+    <div class="example1">show color</div>
+    <div class="example2">show color</div>
+    <div class="example3">show color</div>
+</body>
+
+</html>
