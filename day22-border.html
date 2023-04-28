@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .block {
+            border-block: 2px solid;
+            border-block-color: aqua;
+            border-block-width: 10px 20px;
+            border-block-style: dashed dotted;
+            padding-block: 10px;
+        }
+
+        .inline {
+            border-inline-color: green;
+            border-inline-width: 10px 20px;
+            border-inline-style: dashed dotted;
+            padding-inline: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        1. 与margin padding一样 border也是逻辑属性
+     -->
+    <div class="block">border block</div>
+    <div class="inline">border inline</div>
+
+</body>
+
+</html>
