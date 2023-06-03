@@ -25,6 +25,12 @@
             min-width: 400px;
             max-width: 900px;
         }
+
+        .math {
+            --extra: 10px;
+            border-width: max(20px, 1vw + var(--extra));
+            width: clamp(50px * 4 * 1.5, (100% / 2) * 2, 400px * 2);
+        }
     </style>
 </head>
 
@@ -32,10 +38,12 @@
     <!-- 
         1. clamp()用于定义3个值 (minmum, preferred, maxmum)
         clamp(300px, 90%, 700px) => max(300px, min(90%, 700px))
+        2. min/max/clamp 中也可以书写表达式
      -->
     <div class="minmax">100vw with 400px min-width and 900px max-width</div>
     <div class="clamp">100vw with 400px min-width and 900px max-width</div>
     <div class="traditional">100vw with 400px min-width and 900px max-width</div>
+    <div class="math"></div>
 </body>
 
 </html>

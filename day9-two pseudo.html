@@ -45,6 +45,16 @@
         button {
             background-color: aqua;
         }
+
+        /* case 使用了where让下面的两种选择器权重相同 */
+        .where input:where([type="text"], [type="email"], [type="url"]) {
+            background-color: #efefef;
+            border: 2px solid;
+        }
+
+        .where [aria-invalid="true"] {
+            border-color: red;
+        }
     </style>
 </head>
 
@@ -59,6 +69,15 @@
     <button class="button1">btn1</button>
     <button class="button2">btn2</button>
 
+
+    <!-- 3.  1个小case -->
+    <div class="where">
+        <label for="name">name</label>
+        <input type="text" id="name">
+        <br>
+        <label for="name2">ivalid name</label>
+        <input type="text" id="name2" aria-invalid="true">
+    </div>
 </body>
 
 </html>

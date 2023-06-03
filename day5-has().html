@@ -64,7 +64,17 @@
         h2:has(+ time){
             margin-block-end: 0;
         }
-
+        /* ::before */
+        p::before {
+            content: "Hello";
+        }
+        p:has(::before){
+            background-color: salmon;
+        }
+        /* :hover */
+        .hover:has(:hover){
+            background-color: #caf;
+        }
     </style>
 
 </head>
@@ -114,7 +124,9 @@
         <time>31.10.2022</time>
         <p>Teaser text</p>
     </article>
-
+    <!-- 5. 对伪类生效(必须有子元素) 但是对伪元素不生效 -->
+    <p class="before">world</p>
+    <p class="hover"><span>world</span></p>
 </body>
 
 </html>

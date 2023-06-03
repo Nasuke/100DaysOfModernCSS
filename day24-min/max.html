@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            margin-top: 10px;
+            /* border: max(20px, calc(1vw + 10px)) solid; */
+            border: max(20px, 1vw + 10px) solid;
+        }
+        .var {
+            --extra: 10px;
+            border-width: max(20px, 1vw + var(--extra));
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        min/max 可以直接写数学表达式 不用嵌套calc
+        也可以使用自定义属性
+     -->
+     <div></div>
+     <div class="var"></div>
+</body>
+</html>

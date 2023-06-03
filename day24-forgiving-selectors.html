@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn:hover,
+        .btn:focus,
+        $btn {
+            background-color: hwb(200 20% 0%);
+        }
+
+        .forgive:where(:hover, :focus, $btn) {
+            background-color: hwb(200 20% 0%);
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        当使用选择器列表时
+        如果其中有一个无效或者是不存在或者浏览器不支持 那这个列表的所有选择器都会失效
+        这时候可以用 :has/:where/:is 他们被称作forgiving selectors 会自动忽略的列表中无效的那一个选择器
+     -->
+     <button class=".btn">invalid</button>
+     <button class="forgive">valid</button>
+</body>
+</html>
