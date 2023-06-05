@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+        }
+
+        /* 
+            1: @layer X {}  
+            后面的优先级高于前者
+            结果 => red 
+        */
+        /* @layer A {
+            .layer {
+                background-color: blue;
+            }
+        }
+        @layer B {
+            div {
+                background-color: red;
+            }
+        } */
+
+        /* 
+            2:  @layer X, Y, Z  
+            Z > Y > X 不看之后的顺序
+            结果 => blue 
+            2-1: import引入 @import(elementUI.css) layer(elementUI);
+        */
+        /* @layer B,C,A;
+        @layer A {
+            div {
+                background: blue;
+            }
+        }
+        @layer B {
+            div {
+                background: green;
+            }
+        }
+        @layer C {
+            div {
+                background: orange;
+            }
+        } */
+
+        /* 
+            3: 非 @layer 包裹的样式，拥有比 @layer 包裹样式更高的优先级
+        */
+        a {
+            color: green;
+        }
+
+        @layer A {
+            a {
+                color: red;
+            }
+        }
+
+        @layer B {
+            a {
+                color: orange;
+            }
+        }
+
+        @layer C {
+            a {
+                color: yellow;
+            }
+        }
+
+        /* 
+            4: 匿名层与嵌套层
+                4.1 匿名层 创建后无法向其再添加规则  规则遵循后定义优先级高
+                4.2 嵌套层 @layer A > @layer A.B 优先级高的 @layer，无论是否存在嵌套，优先级都整体比优先级低的 @layer
+                res => @layer C > @layer C.D > @layer A > @layer A.B
+        */
+        div {
+            width: 200px;
+            height: 200px;
+        }
+
+        @layer A {
+            div {
+                background: blue;
+            }
+
+            @layer B {
+                div {
+                    background: red;
+                }
+            }
+        }
+
+        @layer C {
+            div {
+                background: yellow;
+            }
+
+            @layer D {
+                div {
+                    background: green;
+                }
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- 
+        @layer声明了一个级联层 同一层内的规则将级联在一起
+        不同级联层之间的权重不会相互干扰 即优先级高的级联层 其权重永远大于优先级低的级联层
+        
+        例子 : 我们需要引入第三方库的 CSS，为了便于管理，或者便于覆盖其中的一些样式，在之前，只能通过写优先级更高的class去覆盖，或者通过!important去覆盖。
+        有了 @layer 之后，可以这样写：@import(elementUI.css) layer(elementUI); @import(page.css) layer(page);
+        只要在page.css 里面写的，优先级都会比 elementUI.css 内的 CSS 优先级更高
+     -->
+    <div class="layer"></div>
+    <a href="">test</a>
+</body>
+
+</html>
