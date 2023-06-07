@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        这种写法是错误的 url()的参数在没有 "" or ''时 并非传入一个string 而是url-token 而这种格式需要去转义
+        button {
+            --background-image: "/not-pressed.svg";
+            background: url(var(--background-image));
+        }
+
+        button[aria-pressed="true"] {
+            --background-image: "/pressed.svg";
+        } 
+        */
+
+        /* 正确写法 */
+        button {
+            --background-image: url("/not-pressed.svg");
+            background: var(--background-image);
+        }
+
+        button[aria-pressed="true"] {
+            --background-image: url("/pressed.svg");
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 
+        自定义属性与url
+        1. 使用场景: 点击按钮时切换背景图片
+     -->
+
+    <button>click change</button>
+</body>
+
+</html>
