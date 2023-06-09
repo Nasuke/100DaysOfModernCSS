@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        div {
+            border: 1px solid;
+            max-width: 400px;
+            margin-top: 5px;
+        }
+        .t1 {
+            aspect-ratio: 16 / 9;
+        }
+        .t2 {
+            aspect-ratio: 400 / 225;
+        }
+        .t3 {
+            aspect-ratio: 1;
+        }
+
+
+        .t4 {
+            aspect-ratio: 4;
+        }
+
+        .t5 {
+            aspect-ratio: 4;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        1. aspect用来定义宽高比
+     -->
+
+        <div class=" t1">16 / 9</div>
+        <div class=" t2">400 / 225</div>
+        <div class=" t3">1</div>
+
+
+        <div class="t4">sigle value 4</div>
+        <div class="t5">高度超过可以用oveflow: auto来限制
+            <li>a</li>
+            <li>a</li>
+            <li>a</li>
+            <li>a</li>
+            <li>a</li>
+            <li>a</li>
+            <li>a</li>
+        </div>
+</body>
+</html>

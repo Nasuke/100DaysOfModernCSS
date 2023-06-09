@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer {
+            border-color: brown;
+            width: 40rem;
+            max-height: 400px;
+        }
+
+
+        .inner {
+            border-color: hotpink;
+            max-width: 50%;
+            max-height: 200px;
+            float: left;
+            margin: 0 1rem 1rem 0;
+            overscroll-behavior: none;
+        }
+
+        div {
+            padding: 1rem;
+            border: 10px solid;
+            overflow: auto;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <!-- 
+        当内部的滚动区域滚动到底部以后 如果再滚那outer的区域也会开始滚动 
+        这种情况有时不是我们期望的
+        我们希望滚动不会像一条链 各自独立
+        那就可以用 overscroll-behavior: none;
+    -->
+
+    <div class="outer">
+        <div class="inner">
+            And suckers be thinkin' that they can fake this<br>
+            But I'ma drop it at a higher level<br>
+            'Cause I'm inclined to stoop down, hand out some beatdowns<br>
+            Could run a train on punk fools that think they run the game<br>
+            But I learned to burn that bridge and delete<br>
+            Those who compete at a level that's obsolete<br>
+            Instead, I warm my hands upon the flames of the flag<br>
+            To recall the downfall and the businesses that burnt us all<br>
+            See through the news and the views that twist reality<br>
+            Enough, I call the bluff, fuck Manifest Destiny<br>
+            Landlords and power whores, on my people, they took turns<br>
+            Dispute the suits, I ignite and then watch 'em burn
+        </div>
+
+        <p>
+            With the thoughts from a militant mind<br>
+            Hardline, hardline after hardline<br>
+            Landlords and power whores, on my people, they took turns<br>
+            Dispute the suits, I ignite and then watch 'em burn<br>
+        </p>
+
+        <p>
+            Burn, burn, yes, you're gonna burn<br>
+            Burn, burn, yes, you're gonna burn<br>
+            Burn, burn, yes, you're gonna burn<br>
+            Burn, burn, yes, you're gonna burn (Yes, you're gonna)<br>
+            Burn, burn, yes, you're gonna burn<br>
+            Burn, burn, yes, you're gonna burn<br>
+            Burn, burn, yes, you're gonna burn<br>
+            Burn, burn, yes, you're gonna burn<br>
+        </p>
+
+        <p>
+            It goes a one, two, three, another funky, radical bombtrack<br>
+            Started as a sketch in my notebook<br>
+            And now dope hooks make punks take another look<br>
+            My thoughts ya hear and ya begin to fear<br>
+            That ya card will get pulled if ya interfere
+        </p>
+
+        <p>
+            With the thoughts from a militant mind<br>
+            Hardline, hardline after hardline<br>
+            Landlords and power whores, on my people, they took turns<br>
+            Dispute the suits, I ignite and then watch 'em burn<br>
+        </p>
+
+        <p>
+            Burn, burn, yes, you're gonna burn<br>
+            Burn, burn, yes, you're gonna burn<br>
+            Burn, burn, yes, you're gonna burn<br>
+            Burn, burn, yes, you're gonna burn (Yes, you're gonna)<br>
+            Burn, burn, yes, you're gonna burn<br>
+            Burn, burn, yes, you're gonna burn<br>
+            Burn, burn, yes, you're gonna burn<br>
+            Burn, burn, yes, you're gonna burn<br>
+        </p>
+    </div>
+</body>
+
+</html>
