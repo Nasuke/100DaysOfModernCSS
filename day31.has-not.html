@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            border: 4px solid;
+            max-width: 20rem;
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        img {
+            max-width: 100%;
+            order: 0;
+        }
+
+        h2 {
+            order: 1;
+        }
+
+        p {
+            order: 2;
+        }
+        .wrong:has(:not(img)) {
+            border-style: dotted;
+        }
+        .wrong:has(:not(img)) h2{
+            margin: 0;
+        }
+        .right:not(:has(img)) {
+            border-style: dotted;
+        }
+        .right:not(:has(img)) h2{
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        :has(:not()) vs :not(:has())
+        1. :has(:not()) 选中的元素 含有除了img以外的其它任意元素 这种情况只有在父元素只有一个img元素的时候起效 所以wrong的样式就会作用于两个card
+        2. :not(:has()) 则表示该元素不含有某个子元素
+        
+     -->
+    <div class="card wrong">
+        <h2>Card with image</h2>
+        <img src="https://assets.codepen.io/144736/skateboard.jpg" alt="" />
+        <p>text</p>
+    </div>
+
+    <div class="card wrong">
+        <h2>Card without image</h2>
+        <p>text</p>
+    </div>
+
+    <div class="card right">
+        <h2>Card with image</h2>
+        <img src="https://assets.codepen.io/144736/skateboard.jpg" alt="" />
+        <p>text</p>
+    </div>
+
+    <div class="card right">
+        <h2>Card without image</h2>
+        <p>text</p>
+    </div>
+</body>
+
+</html>
