@@ -13,6 +13,7 @@
 
     #container {
         width: 60%;
+        height: 300px!important;
         margin: 100px auto;
         position: relative;
         height: 30px;
@@ -22,6 +23,7 @@
     #list-wrapper {
         position: relative;
         top: 0;
+        transition: all 50ms;
     }
 
     ul {
@@ -34,16 +36,16 @@
     li {
         height: 35px;
         line-height: 35px;
-        color: #fff;
+        color: #1f1d1d;
     }
 
-    li:nth-child(odd) {
+    /* li:nth-child(odd) {
         background: #5077aa;
     }
 
     li:nth-child(even) {
         background: #fb6b06;
-    }
+    } */
 </style>
 
 <body>
@@ -63,12 +65,12 @@
     </div>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script>
-        var ROLL_SPEED = 100
+        var ROLL_SPEED = 50
         var noticeList1 = $('#notice-list');
         var noticeList2 = $('#notice-list-2');
         var listWrapper = $('#list-wrapper');
+
         noticeList2.html(noticeList1.html())
-        listWrapper.css('top', 0)
         var timer = setInterval(rollStart, ROLL_SPEED);
 
         function rollStart () {

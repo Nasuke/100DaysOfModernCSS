@@ -29,10 +29,11 @@
         } */
 
         /* 
-            2:  @layer X, Y, Z  
+            2:  @layer X, Y, Z   
             Z > Y > X 不看之后的顺序
             结果 => blue 
             2-1: import引入 @import(elementUI.css) layer(elementUI);
+            2-2: 如果一个layer被多次定义 只有第一次出现有效
         */
         /* @layer B,C,A;
         @layer A {

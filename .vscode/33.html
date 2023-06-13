@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text-container {
+            overflow: hidden;
+            /* 隐藏溢出的内容 */
+            height: 200px;
+            /* 轮播显示区域的高度 */
+        }
+
+        .text-list {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            position: relative;
+            top: 0;
+            /* 初始位置 */
+            /* animation: scrollText 6s linear infinite; */
+            /* 调用动画函数 */
+        }
+
+        .text-list li {
+            height: 50px;
+            line-height: 50px;
+        }
+
+        /* @keyframes scrollText {
+            0% {
+                top: 0px;
+            }
+
+            100% {
+                top: -500px;
+            }
+            
+        } */
+        /* 初始位置 */
+        /* 显示第5个文字后，上移5个文字的高度 */
+    </style>
+</head>
+
+<body>
+    <div class="text-container">
+        <ul class="text-list">
+            <li>第一条文字</li>
+            <li>第二条文字</li>
+            <li>第三条文字</li>
+            <li>第四条文字</li>
+            <li>第五条文字</li>
+            <li>第1条文字</li>
+            <li>第2条文字</li>
+            <li>第3条文字</li>
+            <li>第4条文字</li>
+            <li>第5条文字</li>
+        </ul>
+        <ul class="text-list list2"></ul>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            var textList = $('.text-list')
+            var textHeight = $('.text-list').height(); // 获取文本列表项的高度
+            var textList2 = $('.list2')
+            textList2.html(textList.html())
+
+            function move () {
+                textList.animate({ top: `-=${textHeight}px` }, 12000, "linear", () => {
+                    textList.css({ top: '0px' })
+                    move()
+                })
+            }
+            move()
+        });
+// 
+
+
+
+        $.ajax({
+            url: 'https://test-mall.csdn.net/mp/mallorder/api/internal/goods/purchaseHistory?flagList=5,19&limit=20',
+            type: "GET",
+            dataType: "json",
+            contentType: "application/json",
+            async: false,
+            success: function (res) {
+                if (res.data) {
+                    console.log(res.data);
+
+                } else {
+                    console.warn("获取商品列表失败")
+                }
+            },
+            error: function (err) {
+                console.warn("获取商品列表失败")
+            },
+        })
+    </script>
+    <style>
+
+    </style>
+</body>
+
+</html>
