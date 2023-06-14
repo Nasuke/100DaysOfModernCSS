@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @supports(display: grid) {
+            .grid {
+                display: block;
+            }
+        }
+        @supports  (transform-origin: 10em 10em 10em) {
+            .not {
+                color: red;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        Your browser supports <code>display: grid</code> 🎉
+    </div>
+    <div class="not">
+        Your browser supports <code>3t</code> 🎉
+    </div>
+</body>
+</html>
