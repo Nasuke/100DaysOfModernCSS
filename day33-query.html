@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            outline: 10px solid;
+            resize: horizontal;
+            overflow: auto;
+        }
+
+        .card {
+            padding: 1rem;
+            margin: 1rem;
+        }
+
+        h2 {
+            margin: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 1rem;
+        }
+
+
+        section {
+            width: 50%;
+            container-type: inline-size;
+        }
+
+        /* 容器查询 width超过500px触发 */
+        @container (min-width: 500px) {
+            .card {
+                background-color: hotpink;
+            }
+        }
+
+        /* 媒体查询 */
+        @media (min-width: 500px) {
+            .card {
+                border-style: dotted;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        使用容器查询在创建容器后 可对尺寸(width/height/inline-size/orientation等)查询
+        也可以创建style container
+
+        1. 如果想查询size 那必须显式声明一个size container 这是因为他们需要该容器才能发挥作用
+            container-type => size/ block-size
+     -->
+    <section>
+        <h2>Latest news</h2>
+
+        <div class="card">
+            <h2>Hey, I'm a card!</h2>
+        </div>
+    </section>
+</body>
+
+</html>
