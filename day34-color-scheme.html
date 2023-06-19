@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            color-scheme: dark light;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        input+label {
+            display: inline;
+            font-weight: normal;
+        }
+
+        #color2 {
+            color-scheme: dark;
+        }
+
+        section {
+            color-scheme: dark;
+            /* background-color: #000; */
+            /* color: #fff; */
+        }
+    </style>
+</head>
+
+<body>
+    <h2>color-scheme</h2>
+
+    <label for="name">Name</label>
+    <input type="text" id="name">
+
+    <p>
+        <label for="color">Favorite color</label>
+        <select id="color">
+            <option>Aqua</option>
+            <option>Fuchsia</option>
+        </select>
+    </p>
+
+    <p>
+        <label for="color2">Favorite color</label>
+        <select id="color2">
+            <option>Aqua</option>
+            <option>Fuchsia</option>
+        </select>
+    </p>
+
+    <section>
+        <input type="checkbox" name="lang" id="css">
+        <label for="css">CSS</label><br>
+
+        <input type="checkbox" name="lang" id="html">
+        <label for="html">HTML</label><br>
+
+        <input type="checkbox" name="lang" id="js">
+        <label for="js">JS</label><br>
+    </section>
+</body>
+
+</html>
