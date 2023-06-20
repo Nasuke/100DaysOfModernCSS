@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid green;
+            color: red;
+            margin: 10px;
+        }
+
+        h2 {
+            color: blue;
+        }
+
+        .inherit {
+            border: inherit;
+            color: inherit;
+            margin: inherit;
+        }
+
+        .initial {
+            border: initial;
+            color: initial;
+            margin: initial;
+        }
+
+        .unset {
+            border: unset;
+            color: unset;
+            margin: unset;
+        }
+
+        [data-sample] .revert {
+            border: revert;
+            color: revert;
+            margin: revert;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        显示声明的属性值
+        inherit: 从parent那继承定义好的属性值
+        innitial: 将属性设置为初始值 注意初始值并不是默认值
+        unset: 可继承属性继承自parent 否则使用初始值
+        revert: 可继承属性继承自parent 否则用上一个级联层的值 如default值等 如果还是没有就initial值
+     -->
+    <div>
+        <h2>standard</h2>
+    </div>
+
+    <div>
+        <h2 class="inherit">inherit</h2>
+    </div>
+
+    <div>
+        <h2 class="initial">initial</h2>
+    </div>
+
+    <div>
+        <h2 class="unset">unset</h2>
+    </div>
+
+    <div>
+        <h2 class="revert">revert</h2>
+    </div>
+
+</body>
+
+</html>
