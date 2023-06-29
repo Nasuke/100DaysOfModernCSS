@@ -35,7 +35,8 @@
             2-1: import引入 @import(elementUI.css) layer(elementUI);
             2-2: 如果一个layer被多次定义 只有第一次出现有效
         */
-        /* @layer B,C,A;
+        /* 
+        @layer B,C,A;
         @layer A {
             div {
                 background: blue;
@@ -50,13 +51,14 @@
             div {
                 background: orange;
             }
-        } */
+        } 
+        */
 
         /* 
             3: 非 @layer 包裹的样式，拥有比 @layer 包裹样式更高的优先级
         */
         a {
-            color: green;
+            color: red;
         }
 
         @layer A {
@@ -112,6 +114,10 @@
             }
         }
 
+        /* 
+            5.revert-layer
+            在嵌套的layer中 revert-layer 可回滚样式到上一层layer
+         */
     </style>
 </head>
 

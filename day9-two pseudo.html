@@ -47,13 +47,15 @@
         }
 
         /* case 使用了where让下面的两种选择器权重相同 */
-        .where input:where([type="text"], [type="email"], [type="url"]) {
-            background-color: #efefef;
-            border: 2px solid;
-        }
+
 
         .where [aria-invalid="true"] {
             border-color: red;
+        }
+
+        .where input:where([type="text"], [type="email"], [type="url"]) {
+            background-color: #efefef;
+            border: 3px solid blue;
         }
     </style>
 </head>

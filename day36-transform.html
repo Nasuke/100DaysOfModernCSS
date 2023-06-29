@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            translate: 20px 0;
+            rotate: 15deg;
+            scale: 1;
+        }
+        button:is(:hover, :focus) {
+            scale: 2;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        transform的值可独立存在 这样发生改变时不必所有都写
+     -->
+     <button>individual</button>
+</body>
+</html>

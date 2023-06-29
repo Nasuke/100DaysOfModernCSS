@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ol {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(16.5rem, 1fr));
+            grid-template-rows: masonry;
+
+
+            /*
+  grid-template-columns: masonry;
+  grid-template-rows: repeat(auto-fill, 6rem);
+  */
+        }
+
+
+
+
+        body,
+        html,
+        ol {
+            height: 100%;
+        }
+
+
+        ol {
+            font-family: sans-serif;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            font-size: 2.6rem;
+            font-weight: bold;
+            line-height: 1.25;
+        }
+
+        li {
+            border: 4px solid;
+        }
+
+        a {
+            display: block;
+            padding: 1rem;
+        }
+
+        a:is(:link, :visited) {
+            color: initial;
+            text-decoration: none;
+        }
+
+        a:is(:hover, :focus-visible) {
+            background-color: rgb(0 0 0);
+            color: rgb(255 255 255);
+        }
+    </style>
+</head>
+
+<body>
+    <ol>
+        <li>
+            <a href="/blog/2023/100daysof-day70/">
+                Day 70: the defined pseudo-class
+            </a>
+        </li>
+        <li>
+            <a href="/blog/2022/100daysof-day69/">
+                Day 69: width in container queries
+            </a>
+        </li>
+        <li>
+            <a href="/blog/2022/100daysof-day68/">
+                Day 68: cascade layers and browser support
+            </a>
+        </li>
+        <li>
+            <a href="/blog/2023/100daysof-day70/">
+                Day 70: the defined pseudo-class
+            </a>
+        </li>
+        <li>
+            <a href="/blog/2022/100daysof-day69/">
+                Day 69: width in container queries
+            </a>
+        </li>
+        <li>
+            <a href="/blog/2022/100daysof-day68/">
+                Day 68: cascade layers and browser support
+            </a>
+        </li>
+
+    </ol>
+</body>
+
+</html>

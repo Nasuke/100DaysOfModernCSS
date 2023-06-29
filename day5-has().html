@@ -39,7 +39,7 @@
         
         /* 合并起来写 */
         div:has(p strong){
-            border: 2px solid gray;
+            border: 2px solid yellow;
         }
 
         /* 这两个权重一样 */
@@ -66,11 +66,19 @@
             content: "Hello";
         }
         p:has(::before){
-            background-color: salmon;
+            background-color: blue;
         }
         /* :hover */
         .hover:has(:hover){
             background-color: #caf;
+        }
+        /* 选中特定个数的子项 >= 3 */
+        ul:has(>:nth-child(3)){
+            border: 10px solid yellow;
+        }
+        /* =3 */
+        ul:has(>:nth-child(3):last-child){
+            border: 10px solid blue;
         }
     </style>
 
@@ -122,8 +130,14 @@
         <p>Teaser text</p>
     </article>
     <!-- 5. 对伪类生效(必须有子元素) 但是对伪元素不生效 -->
-    <p class="before">world</p>
+    <p class="before"><span>world</span></p>
     <p class="hover"><span>world</span></p>
+
+    <ul>
+        <li>A</li>
+        <li>B</li>
+        <li>C</li>
+    </ul>
 </body>
 
 </html>

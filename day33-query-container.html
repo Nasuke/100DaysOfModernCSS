@@ -35,10 +35,11 @@
         section {
             width: 50%;
             container-type: inline-size;
+            font-size: 26px;
         }
 
         /* 容器查询 width超过500px触发 */
-        @container (min-width: 500px) {
+        @container (min-width: 50em) {
             .card {
                 background-color: hotpink;
             }
@@ -61,12 +62,19 @@
             outline: 10px solid;
         }
 
-        @container wrapper (min-width: 600px) {
+        /* @container wrapper (min-width: 600px) {
             .card {
                 background-color: hotpink;
             }
+        } */
+
+
+        @container wrapper (max-width: 32em) {
+            .card {
+                background-color: #008c8c;
+            }
         }
-    </style>
+        </style>
 </head>
 
 <body>
@@ -77,6 +85,8 @@
         1. 如果想查询size 那必须显式声明一个size container 这是因为他们需要该容器才能发挥作用container-type => size/ block-size
 
         2. 使用命名容器查询 可以在嵌套的情况控制用哪个查询
+
+        3. container中使用width的话 总是指代content-box
      -->
     <section>
         <h2>Latest news</h2>
@@ -94,6 +104,11 @@
             </div>
         </section>
     </div>
+    <!-- 
+        3. 在媒体查询中使用em等相对单位是基于浏览器的useragent中设置的  但是如果是容器查询的话 就是基于其计算值
+     -->
+
+
 </body>
 
 </html>
