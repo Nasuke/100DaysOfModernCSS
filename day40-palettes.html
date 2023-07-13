@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'Rocher';
+            src: url(https://assets.codepen.io/144736/RocherColorGX.woff2);
+        }
+
+        h1 {
+            font-family: 'Rocher';
+            font-size: 6rem;
+            margin: 0;
+        }
+
+        @font-palette-values --pink {
+            font-family: 'Rocher';
+            base-palette: 6;
+        }
+
+        @font-palette-values --green {
+            font-family: 'Rocher';
+            base-palette: 5;
+        }
+
+        @font-palette-values --gray {
+            font-family: 'Rocher';
+            base-palette: 9;
+        }
+
+        @font-palette-values --custom-all {
+            font-family: 'Rocher';
+            override-colors:
+                0 rgb(21, 58, 81),
+                1 rgb(255 215 0),
+                2 rgb(84 159 167),
+                3 rgb(128, 210, 219);
+        }
+
+        .pink {
+            font-palette: --pink;
+        }
+
+        .green {
+            font-palette: --green;
+        }
+
+        .gray {
+            font-palette: --gray;
+        }
+
+        .custom-all {
+            font-palette: --custom-all;
+        }
+    </style>
+</head>
+
+<body>
+    /*
+    1. 彩色字体带有默认调色板
+    @font-palette-values --color 来指定rule
+    base-palette: index 来指定色号
+    可以用override-colors 来覆盖
+    */
+    <h1>woah!</h1>
+    <h1 class="pink">woah!</h1>
+    <h1 class="green">woah!</h1>
+    <h1 class="gray">woah!</h1>
+    <h1 class="custom-all">the pharcyde</h1>
+</body>
+
+</html>

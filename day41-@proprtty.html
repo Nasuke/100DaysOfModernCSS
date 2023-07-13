@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @property --h {
+            initial-value: 0;
+            inherits: true;
+            syntax: '<number>';
+        }
+
+        button {
+            --h: 176;
+            --s: 74%;
+            --l: 60%;
+
+            --bg: hsl(var(--h) var(--s) var(--l));
+
+            background-color: var(--bg);
+            /* 
+                此处直接是声明的--h话 是string类型
+                我们通过注册 将它变成了number类型 于是可以达到动画效果
+            */
+            transition:  --h 1.6s;
+        }
+
+        button:is(:hover, :focus-visible) {
+            --h: 20
+        }
+
+        button {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        @property允许注册自定义属性 
+        区别于声明 注册时我们可以指定一些属性 是否可继承/初始值等
+     -->
+     <button>send</button>
+</body>
+</html>
