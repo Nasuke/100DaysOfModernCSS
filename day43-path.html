@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .square {
+
+            offset-path: path('m1,211c0,-2 13.43703,-208 210,-208c196.56297,0 148,202 308,193');
+            offset-distance: 0;
+
+            animation: move 2.4s infinite;
+            animation-play-state: paused;
+        }
+
+        [aria-pressed="true"]~div .square {
+            animation-play-state: running;
+        }
+
+        @keyframes move {
+            0% {
+                offset-distance: 0%;
+            }
+
+            100% {
+                offset-distance: 100%;
+            }
+        }
+
+
+
+
+
+
+        path {
+            fill: none;
+            stroke-width: 4px;
+        }
+
+        div {
+            position: relative;
+        }
+
+        svg,
+        .square {
+            position: absolute;
+            inset-inline-start: 0;
+            inset-block-start: 0;
+        }
+
+        .square {
+            background: hsl(189deg 75% 49%);
+            height: 2em;
+            width: 2em;
+        }
+
+
+        [aria-pressed="true"] {
+            outline: 4px solid red;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        body {
+            margin: 4rem;
+        }
+    </style>
+</head>
+
+<body>
+<button aria-pressed="true">Play animation</button>
+
+<div>
+    <!-- offset-path: path() 和svg的d对应 -->
+    <svg width="524" height="215" viewbox="0 0 524 215">
+        <path stroke="#000" id="svg_1" d="m1,211c0,-2 13.43703,-208 210,-208c196.56297,0 148,202 308,193" />
+    </svg>
+
+    <div class="square"></div>
+</div>
+</body>
+
+</html>

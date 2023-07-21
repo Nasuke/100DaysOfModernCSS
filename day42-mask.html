@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+  height: 100vh;
+  background-color: #000;
+  margin: 0;
+}
+
+.mask {
+  max-width: 400px;
+  aspect-ratio: 1;
+
+  background-image: url("https://assets.codepen.io/144736/neue-donau+%281%29.webp");
+  background-size: cover;
+  -webkit-mask-image: url("https://assets.codepen.io/144736/logo_print.svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: auto 100%;
+}
+
+img {
+  -webkit-mask-image: url("https://assets.codepen.io/144736/logo_print.svg");
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+}
+
+    </style>
+</head>
+<body>
+    <div class="mask"></div>
+    <img src="https://assets.codepen.io/144736/neue-donau+%281%29.webp" width="400px">
+</body>
+</html>
