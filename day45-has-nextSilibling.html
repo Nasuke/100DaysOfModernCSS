@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div {
+  display: grid;
+  grid-template-columns: repeat(5, 4rem);
+  gap: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  grid-auto-rows: 4rem;
+}
+
+button {
+  transition: all 0.8s cubic-bezier(0.2, 0.78, 0.62, 1.2);
+  border: none;
+  background-color: aqua;
+}
+
+button:focus-visible {
+  outline: none;
+}
+
+div:is(:hover, :focus-within) button {
+  opacity: 0.3;
+}
+
+button:is(:hover, :focus-visible) {
+  /* background-color: red; */
+  scale: 1.4;
+  box-shadow: 0 0 8px 0 rgb(0 0 0 / 0.2);
+  opacity: 1 !important;
+  z-index: 1;
+  
+}
+/* 右 */
+button:is(:hover, :focus-visible) + button:not(:nth-child(5n+1)) {
+  /* background-color: blue; */
+  scale: 1.2;
+  box-shadow: 0 0 8px 0 rgb(0 0 0 / 0.2);
+  opacity: 1;
+  
+}
+
+/* 左 */
+button:has(+ button:is(:hover, :focus-visible)):not(:nth-child(5n)) {
+  /* background-color: green; */
+  scale: 1.2;
+  box-shadow: 0 0 8px 0 rgb(0 0 0 / 0.2);
+  opacity: 1;
+  
+}
+
+/* 上 */
+button:has(+ button + button + button + button + button:is(:hover, :focus-visible)) {
+  /* background-color: yellow; */
+  scale: 1.2;
+  box-shadow: 0 0 8px 0 rgb(0 0 0 / 0.2);
+  opacity: 1;
+  
+}
+/* 下 */
+button:is(:hover, :focus-visible) + button + button + button + button + button {
+  /* background-color: aqua; */
+  scale: 1.2;
+  box-shadow: 0 0 8px 0 rgb(0 0 0 / 0.2);
+  opacity: 1;
+  
+}
+    </style>
+</head>
+
+<body>
+    <div>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>10</button>
+        <button>11</button>
+        <button>12</button>
+        <button>13</button>
+        <button>14</button>
+        <button>15</button>
+        <button>16</button>
+        <button>17</button>
+        <button>18</button>
+        <button>19</button>
+        <button>20</button>
+    </div>
+</body>
+
+</html>
